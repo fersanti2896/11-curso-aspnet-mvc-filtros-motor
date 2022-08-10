@@ -15,6 +15,9 @@ namespace Pedidos.Controllers {
 
         [HttpPost]
         public async Task<ActionResult> ConsultaPedidosGeneral(ModeloConsultaDTO modelo) {
+            /* Se deberá tomar de JWT */
+            modelo.CatPerfilId = 2;
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
