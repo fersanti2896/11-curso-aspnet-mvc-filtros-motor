@@ -39,5 +39,12 @@ namespace Pedidos.Controllers {
 
             return Json(lista); 
         }
+
+        [HttpPost]
+        public IActionResult EliminarPedido(PedidoDTO modelo) {
+            var resultado = _IConsultaPedidoService.EliminarPedido(modelo.PedidoId);
+
+            return resultado ? Ok() : StatusCode(500, "Ocurrió un error");
+        }
     }
 }
