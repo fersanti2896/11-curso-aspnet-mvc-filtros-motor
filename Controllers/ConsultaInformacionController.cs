@@ -29,5 +29,12 @@ namespace Pedidos.Controllers {
 
             return PartialView(lista);
         }
+
+        [HttpPost]
+        public async Task<JsonResult> ConsultaEstadosPedidos() {
+            var lista = await _IConsultaPedidoService.ConsultaEstadosPedidos();
+
+            return Json(lista); 
+        }
     }
 }
