@@ -64,7 +64,12 @@ function GenerarPDF() {
             }
         },
         error: function (errorHtml) {
-            alert(controlador + ":" + JSON.stringify(errorHtml));
+            if (errorHtml.responseJSON != undefined) {
+                alert(errorHtml.responseJSON.error)
+            } else {
+                alert(controlador + ":" + JSON.stringify(errorHtml));
+            }
+            
         },
         complete: function () {
 

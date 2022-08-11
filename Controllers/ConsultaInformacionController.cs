@@ -46,5 +46,12 @@ namespace Pedidos.Controllers {
 
             return resultado ? Ok() : StatusCode(500, "Ocurrió un error");
         }
+
+        [HttpPost]
+        public IActionResult ActualizarEstadoPedido(PedidoDTO modelo) {
+            var resultado = _IConsultaPedidoService.ActualizarEstadoPedido(modelo);
+
+            return resultado ? Ok() : StatusCode(500, "Ocurrió un error");
+        }
     }
 }
